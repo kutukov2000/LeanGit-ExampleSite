@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<script>
+    window.onload = function(){
+        setInterval(clockPainting,1000);
+    }
+</script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +17,7 @@
             font-size: 2em;
         }
     </style>
-    
+    <script src="js/clock1.js"></script>
     <script type="text/javascript">
 function send(){
     var valid = true;
@@ -62,6 +66,7 @@ function send(){
         </tr>
         <tr>
             <td width="30%" valign="top">
+                <center><canvas id="canvas" height="120" width="120"></canvas>></center>
                 <font size="5" color="navy">
                     <h2>Новини</h2>
                 </font>
