@@ -124,14 +124,31 @@ function send(){
                 </form>
                 <hr>
             </td>
-            <td width="70%" valing='top'>
-<h1 align="center">Дякуємо за реєстрацію !</h1>
-<?php
-$st = $_POST['name2'].";".$_POST['name1'].";".$_POST['email'].";".$_POST['password']."\n";
-$fp = fopen("baza.txt","a");
-$test = fwrite($fp,$st);
-echo "<h2 align='center'>Ви ввели : >".$_POST['name2'].";".$_POST['name1'].";".$_POST['email'].";".$_POST['password']."</h2>";
-  ?>
+            <td width="70%" background="images/bg.jpg" valing='top'><font size="5">
+                <h1 align="center">Список зареєстрованих !</h1>
+            <table align="center" border="1" width="600">
+    <tr>
+        <td align="center"><b>Прізвище</b></td>
+        <td align="center"><b>Ім'я</b></td>
+        <td align="center"><b>E-mail</b></td>
+        <td align="center"><b>Пароль</b></td>
+    </tr>
+    <?php
+$data = file("baza.txt");
+foreach ($data as $line){
+    $trs = explode(";", $line);
+    echo '<tr>';
+    echo '<td>'.$trs[0].'</td>';
+    echo '<td>'.$trs[1].'</td>';
+    echo '<td>'.$trs[2].'</td>';
+    echo '<td>'.$trs[3].'</td>';
+    echo '</tr>';
+}
+?>
+            </table>
+            </font>
+
+
   </h1>              
             </td>
         </tr>
